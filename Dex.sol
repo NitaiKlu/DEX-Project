@@ -7,8 +7,8 @@ import "./Liquidity_pool.sol";
 
 contract Dex {
     struct pair {
-        string constant name1;
-        string constant name2;
+        string name1;
+        string name2;
     }
     // fields:
     uint public constant number_of_pairs = 2; //that means we support 3 coins A<-->B, B<-->C
