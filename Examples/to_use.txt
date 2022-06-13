@@ -1,0 +1,11 @@
+1.reach ganache-cli-test and run: 
+ganache-cli --fork https://mainnet.infura.io/v3/503f7ae1b1a34e4ca3b5d7ab3ed25ee3 --unlock 0x1aD91ee08f21bE3dE0BA2ba6918E714dA6B45836 -p 7545
+
+2. connect the remix extension to the network you just forked by:
+https://localhost:7545
+
+3. compile the smart contracts
+
+4. deploy them to the network
+
+5. use ganache's addresses for testing
