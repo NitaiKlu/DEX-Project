@@ -3,7 +3,8 @@ pragma solidity ^0.8.6;
 
 import "./ownable.sol";
 import "./PriceConsumerV3.sol";
-import "./ERC20_token/IERC.sol";
+import "./ERC20_token/IERC20.sol";
+import "./PoolToken.sol";
 
 /// @title Liquidity_pair_pool Contract 
 
@@ -11,7 +12,7 @@ contract Liquidity_pool is Ownable {
     // fields:
     IERC20 public tokenA;
     IERC20 public tokenB;
-    IERC20 public liquidityToken;
+    PoolToken public liquidityToken;
     mapping (address => uint) donors;
     uint private k_pool;
     uint private total_funds_locked;
@@ -23,7 +24,7 @@ contract Liquidity_pool is Ownable {
     // onlyOwner() can be used at the end of a function
     // to make sure that only the owner of the contract can use the function
 
-    constructor(uint _initial_A, uint _initial_B,IERC20 _tokenA,IERC20 _tokenB, IERC20 _liquidityToken) {
+    constructor(uint _initial_A, uint _initial_B,IERC20 _tokenA,IERC20 _tokenB, PoolToken _liquidityToken) {
         tokenA = new _tokenA();
         tokenB = new _tokenB();
         liquidityToken = new _liquidityToken(); 
@@ -41,16 +42,24 @@ contract Liquidity_pool is Ownable {
         total_funds_received = _initial_A*exchange_value_A + _initial_B*exchange_value_B;
         k_pool = amount_A * amount_B;
     }
+    function assertOwnerAndFunds() public {
+        uint exchange_value_A;
+        exchange_value_A = priceFeedTokenA.getLatestPrice();
+        uint exchange_value_B;
+        exchange_value_B = priceFeedTokenB.getLatestPrice();
+        return string.concat("The owner of this contract is address",string(owner()),". The total funds locked in this contract is",string(amount_A* exchange_value_A+ amount_B* exchange_value_B));
+    }
+
     function exchange(uint _amount, IERC20 _coin_received) payable external  {
         require((_coin_received==tokenA) || (_coin_received==tokenB));
         
         // amount is the amount of the token the user is sending us
         uint amount_minus_fee = (_amount*0.97);
         // send the 3% to all liquidity providers ?
-        //TODO correct to make the fee higher if the funds are lower
         if(_coin_received == tokenA){
             require(tokenA.allowance(msg.sender,address(this)) >= _amount, "Not enough tokens have been allowed");
-            uint amount_sent_back = amount_minus_fee * amount_A/amount_B;
+            // dy = dx*y/(x=dx)
+            uint amount_sent_back = (amount_minus_fee * amount_B)/(amount_A+ amount_minus_fee);
             require(amount_sent_back<amount_B,"not enough funds to perform transaction");
             //take the funds of the user
             tokenA.transferFrom(msg.sender, address(this),_amount);
@@ -62,7 +71,8 @@ contract Liquidity_pool is Ownable {
         }
         else{
             require(tokenB.allowance(msg.sender,address(this)) >= _amount, "Not enough tokens have been allowed");
-            uint amount_sent_back = amount_minus_fee * amount_B/amount_A;
+            // dy = dx*y/(x=dx)
+            uint amount_sent_back = (amount_minus_fee * amount_A)/(amount_B+ amount_minus_fee);
             require(amount_sent_back<amount_A,"not enough funds to perform transaction");
             //take the funds of the user
             tokenB.transferFrom(msg.sender, address(this),_amount);
