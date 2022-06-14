@@ -2,9 +2,10 @@
 pragma solidity ^0.8.6;
 // use latest solidity version at time of writing, need not worry about overflow and underflow
 
+import "./IERC.sol";
 /// @title ERC20 Contract 
 
-contract Token {
+contract Token is IERC20 {
 
     // My Variables
     string public name;
