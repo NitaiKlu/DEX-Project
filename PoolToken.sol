@@ -3,7 +3,7 @@ pragma solidity ^0.8.6;
 // use latest solidity version at time of writing, need not worry about overflow and underflow
 
 /// @title ERC20 Contract - a liquidity pool token 
-
+// import "./ERC20_token/IERC20.sol"
 //whoever constructs this contract is the only owner of the totalSupply of the tokens.
 //in this project, it's the job of the Liquidity_pool contract to do so!
 contract PoolToken {
