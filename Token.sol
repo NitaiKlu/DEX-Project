@@ -5,7 +5,7 @@ pragma solidity ^0.8.6;
 
 //whoever constructs this contract is the only owner of the totalSupply of the tokens.
 
-contract TokenB {
+contract Token {
 
     // My Variables
     string public name;
@@ -81,4 +81,11 @@ contract TokenB {
         return true;
     }
 
+    function getSymbol() public view returns (string memory) {
+        return symbol;
+    }
+
+    function getTotalSupply() public view returns (uint256) {
+        return totalSupply;
+    }
 }

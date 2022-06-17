@@ -163,6 +163,32 @@
 			},
 			{
 				"inputs": [],
+				"name": "getSymbol",
+				"outputs": [
+					{
+						"internalType": "string",
+						"name": "",
+						"type": "string"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "getTotalSupply",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
 				"name": "name",
 				"outputs": [
 					{
@@ -323,11 +349,11 @@
 	},
 	"sources": {
 		"TokenA.sol": {
-			"keccak256": "0x8c635afde074894a83b9219e66f6999fb1a32cba5385a3bb0d06aa78b30b5abf",
+			"keccak256": "0xb424eec078e4648d1d0282f9993b999dc53fa60285c5a61fdc387ebb93af772b",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://2c24632e659df6ad5e33d66cba3cd54ec01bc4273798834b88ac8d68c83727e7",
-				"dweb:/ipfs/QmQKPZHhHRjEH91XZpUJEhiCLDLYeU7rDnN6NhSE21419H"
+				"bzz-raw://a35aa237b22ea4941f97b198a9d4511f8dc00b25f1d2918f6a53cb579e0f4ea1",
+				"dweb:/ipfs/QmT2vWrPKBzi1GS3yq1Fv9Etas5XQn83ytCNpXq4G3t8bo"
 			]
 		}
 	},

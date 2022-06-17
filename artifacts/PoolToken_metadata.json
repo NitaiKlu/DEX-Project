@@ -163,6 +163,32 @@
 			},
 			{
 				"inputs": [],
+				"name": "getSymbol",
+				"outputs": [
+					{
+						"internalType": "string",
+						"name": "",
+						"type": "string"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "getTotalSupply",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
 				"name": "name",
 				"outputs": [
 					{
@@ -331,11 +357,11 @@
 			]
 		},
 		"PoolToken.sol": {
-			"keccak256": "0xdc9cd7f9e7397239e60b4bb02b9d82c46903fcf04c7e0749555655bd5e8d1729",
+			"keccak256": "0x15876b9c8ce47b392696705c2fdafdc176574ca7562302aacf16f53759cfdd22",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://af63dc60323c1688a08b0067867b2e25966a70f52cc4e09a50042f146fc9023f",
-				"dweb:/ipfs/QmYY8s6FL6LgyKYpoZtkhKTCDqS2jp2cBmyaRjMbqRBq3d"
+				"bzz-raw://66d63151a9dc05b2a621d8eef223ad14ef0ef703467e8e1ba7a96b46473fd9e3",
+				"dweb:/ipfs/QmdeHpu1jpdgNuaSHAUCr5JEMjWhuZLy9wvKiUUDGfCaVQ"
 			]
 		}
 	},

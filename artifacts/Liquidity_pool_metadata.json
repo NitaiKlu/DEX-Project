@@ -1,0 +1,378 @@
+{
+	"compiler": {
+		"version": "0.8.6+commit.11564f7e"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "_initial_A",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "_initial_B",
+						"type": "uint256"
+					},
+					{
+						"internalType": "address",
+						"name": "token_a_contract",
+						"type": "address"
+					},
+					{
+						"internalType": "address",
+						"name": "token_b_contract",
+						"type": "address"
+					}
+				],
+				"stateMutability": "nonpayable",
+				"type": "constructor"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "previousOwner",
+						"type": "address"
+					},
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "newOwner",
+						"type": "address"
+					}
+				],
+				"name": "OwnershipTransferred",
+				"type": "event"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "_amount_coin_A",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "_amount_coin_B",
+						"type": "uint256"
+					}
+				],
+				"name": "donate",
+				"outputs": [],
+				"stateMutability": "payable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "_amount",
+						"type": "uint256"
+					},
+					{
+						"internalType": "string",
+						"name": "_coin_received",
+						"type": "string"
+					}
+				],
+				"name": "exchange",
+				"outputs": [],
+				"stateMutability": "payable",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "exchange_value_A",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "exchange_value_B",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "getAmountA",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "getAmountB",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "getFunds",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "getFundsLocked",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "getK",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "liquidityToken",
+				"outputs": [
+					{
+						"internalType": "contract PoolToken",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "owner",
+				"outputs": [
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "_amount",
+						"type": "uint256"
+					}
+				],
+				"name": "redeem",
+				"outputs": [],
+				"stateMutability": "payable",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "renounceOwnership",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "tokenA",
+				"outputs": [
+					{
+						"internalType": "contract TokenA",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "tokenB",
+				"outputs": [
+					{
+						"internalType": "contract TokenB",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "newOwner",
+						"type": "address"
+					}
+				],
+				"name": "transferOwnership",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			}
+		],
+		"devdoc": {
+			"kind": "dev",
+			"methods": {
+				"owner()": {
+					"details": "Returns the address of the current owner."
+				},
+				"renounceOwnership()": {
+					"details": "Leaves the contract without owner. It will not be possible to call `onlyOwner` functions anymore. Can only be called by the current owner. NOTE: Renouncing ownership will leave the contract without an owner, thereby removing any functionality that is only available to the owner."
+				},
+				"transferOwnership(address)": {
+					"details": "Transfers ownership of the contract to a new account (`newOwner`). Can only be called by the current owner."
+				}
+			},
+			"title": "Liquidity_pair_pool Contract ",
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {},
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"Liquidity_pool.sol": "Liquidity_pool"
+		},
+		"evmVersion": "berlin",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": false,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"AggregatorV3Interface.sol": {
+			"keccak256": "0x8db60f81b61f79fab0366fa7ef9d47ac67462276d0cbe7b36a2fdf74654e9c51",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://0c102d1f8b81f966eb8acd919cbe14b3785a2389427154ac99bb54d3e94fddce",
+				"dweb:/ipfs/QmX9afvMGRxCX6AZbHRhmkEHYJAGDeyeT5ycx7u43zSsNK"
+			]
+		},
+		"ERC20_token/IERC20.sol": {
+			"keccak256": "0xcf55d265592e8b07ff8cad8c4d3db2e9ccca3dbc066cec5b9a6ca10de1624960",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://a353382a5d1ee61672e2014b52aafa1c9147c3739119195eadfeb83b69d921f6",
+				"dweb:/ipfs/QmZ2Wx6SgCsANjRHHbyj8vEGwemVGDn1H5vRVuiJpUGCHV"
+			]
+		},
+		"Liquidity_pool.sol": {
+			"keccak256": "0x32f9ed23795c88f754a04590fcd391b5a46e8afe40b26c9160fe1bc3a864bd14",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://457d3bda7881da63e2e8aa66acd55f48a69a92792db94c4c270e5675653db12c",
+				"dweb:/ipfs/QmRBmoAD1TNCyWG4pxLrShmdM9pLb5kkzutWaH2dE37HjL"
+			]
+		},
+		"PoolToken.sol": {
+			"keccak256": "0x15876b9c8ce47b392696705c2fdafdc176574ca7562302aacf16f53759cfdd22",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://66d63151a9dc05b2a621d8eef223ad14ef0ef703467e8e1ba7a96b46473fd9e3",
+				"dweb:/ipfs/QmdeHpu1jpdgNuaSHAUCr5JEMjWhuZLy9wvKiUUDGfCaVQ"
+			]
+		},
+		"PriceConsumerV3.sol": {
+			"keccak256": "0xa7c110aa41f1ddd2c5bbc36be1a6a22518bc0ad00ecd4ce3bd31ffb346273332",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://5d6e046339eb475c799d8c95ef52853c7a3cff7f86ef60b75071459ab14f7a58",
+				"dweb:/ipfs/QmSb2etxpfLVxnLz1HNgwGhxZzZpz1mucTLesY3cH3BDXA"
+			]
+		},
+		"TokenA.sol": {
+			"keccak256": "0xb424eec078e4648d1d0282f9993b999dc53fa60285c5a61fdc387ebb93af772b",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://a35aa237b22ea4941f97b198a9d4511f8dc00b25f1d2918f6a53cb579e0f4ea1",
+				"dweb:/ipfs/QmT2vWrPKBzi1GS3yq1Fv9Etas5XQn83ytCNpXq4G3t8bo"
+			]
+		},
+		"TokenB.sol": {
+			"keccak256": "0x3d5fbf195c1c40f1a43cfda98abfad312587c1efa6f6c33cbf4e1838876756cc",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://b486107c197acef29f32364befd97ebbc0592f9c71928deee27816ca1f7f68c8",
+				"dweb:/ipfs/QmSm46wcfUbwg41BUxeEvmW7cEr9mxRbuLJ1kB3W2kSH3d"
+			]
+		},
+		"context.sol": {
+			"keccak256": "0x2c36c9489879b7c91cdd73bbe8b2584f401aa26f4f252c04f053e824d6ca75c6",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://3ef20575fc12fd27f252acd28a8d0f65893832f29fd9c82f7ec165121af4572f",
+				"dweb:/ipfs/QmZMCoWWDTjhs1CNFMWv4JNWVyyeuzyqteCHhF4heCUYJJ"
+			]
+		},
+		"ownable.sol": {
+			"keccak256": "0xb7b99f5887fe8a5a25f5776d49a0cbc1fa9ae03b52c2cd23da1b35b73cf61e41",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://0f3c8bd53d5fd1af3d4fe53d8726bc281d783ac4e3b1975406823c9e361be6ab",
+				"dweb:/ipfs/QmPeamqA5V5sAtYkZkL89YDaqxLUPt1kaiftkzUfDVt9HQ"
+			]
+		}
+	},
+	"version": 1
+}

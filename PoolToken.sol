@@ -83,4 +83,12 @@ contract PoolToken {
         return true;
     }
 
+    function getSymbol() public view returns (string memory) {
+        return symbol;
+    }
+
+    function getTotalSupply() public view returns (uint256) {
+        return totalSupply;
+    }
+
 }
