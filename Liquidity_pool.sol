@@ -5,13 +5,15 @@ import "./ownable.sol";
 import "./PriceConsumerV3.sol";
 import "./ERC20_token/IERC20.sol";
 import "./PoolToken.sol";
+import "./TokenA.sol";
+import "./TokenB.sol";
 
 /// @title Liquidity_pair_pool Contract 
 
 contract Liquidity_pool is Ownable {
     // fields:
-    IERC20 public tokenA;
-    IERC20 public tokenB;
+    TokenA public tokenA;
+    TokenB public tokenB;
     PoolToken public liquidityToken;
     mapping (address => uint) donors;
     uint private k_pool;
@@ -24,9 +26,9 @@ contract Liquidity_pool is Ownable {
     // onlyOwner() can be used at the end of a function
     // to make sure that only the owner of the contract can use the function
 
-    constructor(uint _initial_A, uint _initial_B,IERC20 _tokenA,IERC20 _tokenB, PoolToken _liquidityToken) {
-        tokenA = new _tokenA();
-        tokenB = new _tokenB();
+    constructor(uint _initial_A, uint _initial_B, PoolToken _liquidityToken) {
+        // tokenA = new _tokenA();
+        // tokenB = new _tokenB(); no need to do that because the coin is not our job to initialize!
         liquidityToken = new _liquidityToken(); 
         // i don't think there should be any liquidity
         // to start with people will use the deposit function to add funds

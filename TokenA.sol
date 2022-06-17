@@ -1,13 +1,11 @@
 // SPDX-License-Identifier: MIT
 pragma solidity ^0.8.6;
 
-import "./ERC20_token/IERC20.sol";
+/// @title ERC20 Contract - a token to change with 
 
-/// @title ERC20 Contract - a liquidity pool token 
-// import "./ERC20_token/IERC20.sol"
 //whoever constructs this contract is the only owner of the totalSupply of the tokens.
-//in this project, it's the job of the Liquidity_pool contract to do so!
-contract PoolToken {
+
+contract TokenA {
 
     // My Variables
     string public name;
