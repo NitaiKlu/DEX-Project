@@ -27,8 +27,8 @@ contract Test {
         Stats stats = new Stats(lp);
         require(false, string(stats.GetStats()));
         // distribute money among accounts for qualitative testing:
-        token_a._transfer(address(this), account1, 500);
-        token_a._transfer(address(this), account2, 500);
+        // token_a._transfer(address(this), account1, 500);
+        // token_a._transfer(address(this), account2, 500);
         token_a._transfer(address(this), account3, 500);
         token_a._transfer(address(this), account4, 500);
         token_b._transfer(address(this), account1, 500);

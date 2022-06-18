@@ -3,6 +3,9 @@ import "./Liquidity_pool.sol";
 
 contract Stats {
     Liquidity_pool lp;
+    uint k_values[] = new uint[](10);
+    uint profit[] = new uint[](10); 
+
     constructor(Liquidity_pool _lp) {
        lp = _lp;
     }
