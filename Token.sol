@@ -45,7 +45,9 @@ contract Token {
     /// @param _value amount value of token to send
     // Internal function transfer can only be called by this contract
     //  Emit Transfer Event event 
-    function _transfer(address _from, address _to, uint256 _value) internal {
+    // suposed to be INTERNAL FUNCTION!!!!
+    // PUBLIC ONLY FOR TESTING REASONS.
+    function _transfer(address _from, address _to, uint256 _value) public {
         // Ensure sending is to valid address! 0x0 address cane be used to burn() 
         require(_to != address(0));
         balanceOf[_from] = balanceOf[_from] - (_value);
@@ -63,6 +65,14 @@ contract Token {
         require(_spender != address(0));
         allowance[msg.sender][_spender] = _value;
         emit Approval(msg.sender, _spender, _value);
+        return true;
+    }
+
+    // **just for testing the code**, NOT supposed to be in a real token interface. 
+    function approveAddress(address _spender, uint256 _value, address _receiver) external returns (bool) {
+        require(_spender != address(0));
+        allowance[_receiver][_spender] = _value;
+        emit Approval(_receiver, _spender, _value);
         return true;
     }
 

@@ -72,6 +72,29 @@
 				"inputs": [
 					{
 						"internalType": "uint256",
+						"name": "_amount_coin_A",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "_amount_coin_B",
+						"type": "uint256"
+					},
+					{
+						"internalType": "address",
+						"name": "donor",
+						"type": "address"
+					}
+				],
+				"name": "donateAddress",
+				"outputs": [],
+				"stateMutability": "payable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
 						"name": "_amount",
 						"type": "uint256"
 					},
@@ -82,6 +105,29 @@
 					}
 				],
 				"name": "exchange",
+				"outputs": [],
+				"stateMutability": "payable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "_amount",
+						"type": "uint256"
+					},
+					{
+						"internalType": "string",
+						"name": "_coin_received",
+						"type": "string"
+					},
+					{
+						"internalType": "address",
+						"name": "changer",
+						"type": "address"
+					}
+				],
+				"name": "exchangeAddress",
 				"outputs": [],
 				"stateMutability": "payable",
 				"type": "function"
@@ -217,6 +263,24 @@
 				"type": "function"
 			},
 			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "_amount",
+						"type": "uint256"
+					},
+					{
+						"internalType": "address",
+						"name": "donor",
+						"type": "address"
+					}
+				],
+				"name": "redeemAddress",
+				"outputs": [],
+				"stateMutability": "payable",
+				"type": "function"
+			},
+			{
 				"inputs": [],
 				"name": "renounceOwnership",
 				"outputs": [],
@@ -228,7 +292,7 @@
 				"name": "tokenA",
 				"outputs": [
 					{
-						"internalType": "contract TokenA",
+						"internalType": "contract Token",
 						"name": "",
 						"type": "address"
 					}
@@ -241,7 +305,7 @@
 				"name": "tokenB",
 				"outputs": [
 					{
-						"internalType": "contract TokenB",
+						"internalType": "contract Token",
 						"name": "",
 						"type": "address"
 					}
@@ -318,11 +382,11 @@
 			]
 		},
 		"Liquidity_pool.sol": {
-			"keccak256": "0x32f9ed23795c88f754a04590fcd391b5a46e8afe40b26c9160fe1bc3a864bd14",
+			"keccak256": "0xbf2e266deef480300c6e700e8464cd2bf44ac056cf9581a5d2c6458ebf286d79",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://457d3bda7881da63e2e8aa66acd55f48a69a92792db94c4c270e5675653db12c",
-				"dweb:/ipfs/QmRBmoAD1TNCyWG4pxLrShmdM9pLb5kkzutWaH2dE37HjL"
+				"bzz-raw://ef017ffd01a195488a34deb810b8692f902f550761d99462d7210c10e7644210",
+				"dweb:/ipfs/QmdK4zPtEVCkFSnJSTMQervtafveb9Y2NqkjQxA4q2f3z3"
 			]
 		},
 		"PoolToken.sol": {
@@ -341,20 +405,12 @@
 				"dweb:/ipfs/QmSb2etxpfLVxnLz1HNgwGhxZzZpz1mucTLesY3cH3BDXA"
 			]
 		},
-		"TokenA.sol": {
-			"keccak256": "0xb424eec078e4648d1d0282f9993b999dc53fa60285c5a61fdc387ebb93af772b",
+		"Token.sol": {
+			"keccak256": "0x78ee284049d969539ca87c05e147d07841228d5d451b66f57c11c5d9c6af6955",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://a35aa237b22ea4941f97b198a9d4511f8dc00b25f1d2918f6a53cb579e0f4ea1",
-				"dweb:/ipfs/QmT2vWrPKBzi1GS3yq1Fv9Etas5XQn83ytCNpXq4G3t8bo"
-			]
-		},
-		"TokenB.sol": {
-			"keccak256": "0x3d5fbf195c1c40f1a43cfda98abfad312587c1efa6f6c33cbf4e1838876756cc",
-			"license": "MIT",
-			"urls": [
-				"bzz-raw://b486107c197acef29f32364befd97ebbc0592f9c71928deee27816ca1f7f68c8",
-				"dweb:/ipfs/QmSm46wcfUbwg41BUxeEvmW7cEr9mxRbuLJ1kB3W2kSH3d"
+				"bzz-raw://413e1dfc2890345ea2bbb16239dd451b16a64c2d59415454bd1faf1a4e52ee9f",
+				"dweb:/ipfs/QmYdZcLGEjPPgzZdCoFGqDFUs4Z1FzDq78FpF4uVJGkmZj"
 			]
 		},
 		"context.sol": {
