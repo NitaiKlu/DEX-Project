@@ -6,33 +6,7 @@
 	"output": {
 		"abi": [
 			{
-				"inputs": [
-					{
-						"internalType": "address",
-						"name": "_tokenA",
-						"type": "address"
-					},
-					{
-						"internalType": "address",
-						"name": "_tokenB",
-						"type": "address"
-					},
-					{
-						"internalType": "address",
-						"name": "_poolToken",
-						"type": "address"
-					},
-					{
-						"internalType": "address",
-						"name": "_dataFeedA",
-						"type": "address"
-					},
-					{
-						"internalType": "address",
-						"name": "_dataFeedB",
-						"type": "address"
-					}
-				],
+				"inputs": [],
 				"stateMutability": "nonpayable",
 				"type": "constructor"
 			},
@@ -56,44 +30,8 @@
 				"type": "event"
 			},
 			{
-				"inputs": [
-					{
-						"internalType": "uint256",
-						"name": "_amount_coin_A",
-						"type": "uint256"
-					},
-					{
-						"internalType": "uint256",
-						"name": "_amount_coin_B",
-						"type": "uint256"
-					}
-				],
-				"name": "donate",
-				"outputs": [],
-				"stateMutability": "payable",
-				"type": "function"
-			},
-			{
-				"inputs": [
-					{
-						"internalType": "uint256",
-						"name": "_amount",
-						"type": "uint256"
-					},
-					{
-						"internalType": "address",
-						"name": "_coin_received",
-						"type": "address"
-					}
-				],
-				"name": "exchange",
-				"outputs": [],
-				"stateMutability": "payable",
-				"type": "function"
-			},
-			{
 				"inputs": [],
-				"name": "liquidityToken",
+				"name": "liquidityTokenAddress",
 				"outputs": [
 					{
 						"internalType": "address",
@@ -120,14 +58,20 @@
 			{
 				"inputs": [
 					{
-						"internalType": "uint256",
-						"name": "_amount",
-						"type": "uint256"
+						"internalType": "address",
+						"name": "",
+						"type": "address"
 					}
 				],
-				"name": "redeem",
-				"outputs": [],
-				"stateMutability": "payable",
+				"name": "poolsExist",
+				"outputs": [
+					{
+						"internalType": "bool",
+						"name": "",
+						"type": "bool"
+					}
+				],
+				"stateMutability": "view",
 				"type": "function"
 			},
 			{
@@ -138,42 +82,29 @@
 				"type": "function"
 			},
 			{
-				"inputs": [],
-				"name": "tokenA",
-				"outputs": [
-					{
-						"internalType": "address",
-						"name": "",
-						"type": "address"
-					}
-				],
-				"stateMutability": "view",
-				"type": "function"
-			},
-			{
-				"inputs": [],
-				"name": "tokenB",
-				"outputs": [
-					{
-						"internalType": "address",
-						"name": "",
-						"type": "address"
-					}
-				],
-				"stateMutability": "view",
-				"type": "function"
-			},
-			{
-				"inputs": [],
-				"name": "total_funds_received",
-				"outputs": [
+				"inputs": [
 					{
 						"internalType": "uint256",
-						"name": "",
+						"name": "amount",
 						"type": "uint256"
 					}
 				],
-				"stateMutability": "view",
+				"name": "requestFromPool",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "liquidityPool",
+						"type": "address"
+					}
+				],
+				"name": "takeControlPool",
+				"outputs": [],
+				"stateMutability": "nonpayable",
 				"type": "function"
 			},
 			{
@@ -203,7 +134,6 @@
 					"details": "Transfers ownership of the contract to a new account (`newOwner`). Can only be called by the current owner."
 				}
 			},
-			"title": "Liquidity_pair_pool Contract ",
 			"version": 1
 		},
 		"userdoc": {
@@ -214,7 +144,7 @@
 	},
 	"settings": {
 		"compilationTarget": {
-			"Liquidity_pool.sol": "Liquidity_pool"
+			"Dex.sol": "Dex"
 		},
 		"evmVersion": "berlin",
 		"libraries": {},
@@ -237,11 +167,11 @@
 			]
 		},
 		"Dex.sol": {
-			"keccak256": "0xc5199b21403cefc67e3302664ec8b3deb55a7a5178b5f1ef4da921ac73f08f0a",
+			"keccak256": "0xba452b649dc0cd37705c05cb8429355112ec756ad6d682fe086c43f570f67dc6",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://1803c50ba0de32ff9c9151380825425a92defc6219e9e18e05b8bcd850f27577",
-				"dweb:/ipfs/QmWvfRitBSMMC8cwyBmFJYScdsoMWwUHK9Cuvb5HuxA8KW"
+				"bzz-raw://878da268075688318937a6598d2fef0729e3a47254277b256eb774990ea0f7a3",
+				"dweb:/ipfs/QmRUL4zcK8n8ahVqye5aJeFSNHeWwSRNPekZ1jgU2K9nQt"
 			]
 		},
 		"ERC20_token/IERC20.sol": {
@@ -253,11 +183,11 @@
 			]
 		},
 		"Liquidity_pool.sol": {
-			"keccak256": "0xa0b306de84612d5222ac44459da678cc40f84dc9ddc7975ef0e4703769656cd4",
+			"keccak256": "0xb843e4066d447abd33aa8353950a9b8dcc4c229ca84ce029364cb15e55a4870b",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://1f231017caadcd5d6af7c26c8cdd01aa99017fc887e4ddf96676af8f242009cd",
-				"dweb:/ipfs/QmerzkN4DMUrqZjiQ4R7V6Y19KUVNKV15w7ir4CXGBLAE6"
+				"bzz-raw://d988612a2af9dd100d75a301205d4d77c6872f788195e28fe5f4e45691629614",
+				"dweb:/ipfs/QmW5tbyyUwu7Cfr9yzhoYqEUuLVX9SVaK2AyQK5tgjJBiA"
 			]
 		},
 		"PoolToken.sol": {
@@ -277,11 +207,11 @@
 			]
 		},
 		"Strings.sol": {
-			"keccak256": "0x4a7dfd1c357d1930924877ce09ca5ab203f6037d462d1a1bef61ced93e736091",
+			"keccak256": "0xe1959c8fd690bfe3799bf7ce664afbf88b82748b1d7e21b40741de06a7426074",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://c11be1f5bafb5c50122ddaddb61cdb1bd107e0746955aa9ef8888d032f95ad00",
-				"dweb:/ipfs/QmQB8t9egKpAGoW2bkb5GwSy1NqWHBiYcQdTUXKNUdkfGc"
+				"bzz-raw://94a77a2ffd2e09d0532e292081635528249dd2f1d92f1719c1cf97b108448664",
+				"dweb:/ipfs/QmW8aBqGeuB3Jcswx5HiKB1tP7NRVbd9RcZhSW7QtCQ1BA"
 			]
 		},
 		"context.sol": {

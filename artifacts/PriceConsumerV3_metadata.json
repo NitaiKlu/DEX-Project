@@ -1,0 +1,85 @@
+{
+	"compiler": {
+		"version": "0.8.6+commit.11564f7e"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "aggregator",
+						"type": "address"
+					}
+				],
+				"stateMutability": "nonpayable",
+				"type": "constructor"
+			},
+			{
+				"inputs": [],
+				"name": "getLatestPrice",
+				"outputs": [
+					{
+						"internalType": "int256",
+						"name": "",
+						"type": "int256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			}
+		],
+		"devdoc": {
+			"kind": "dev",
+			"methods": {},
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {
+				"constructor": {
+					"notice": "Network: Kovan Aggregator: /USD Address: 0x9326BFA02ADD2366b30bacB125260Af641031331"
+				},
+				"getLatestPrice()": {
+					"notice": "Returns the latest price"
+				}
+			},
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"PriceConsumerV3.sol": "PriceConsumerV3"
+		},
+		"evmVersion": "berlin",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": false,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"AggregatorV3Interface.sol": {
+			"keccak256": "0x8db60f81b61f79fab0366fa7ef9d47ac67462276d0cbe7b36a2fdf74654e9c51",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://0c102d1f8b81f966eb8acd919cbe14b3785a2389427154ac99bb54d3e94fddce",
+				"dweb:/ipfs/QmX9afvMGRxCX6AZbHRhmkEHYJAGDeyeT5ycx7u43zSsNK"
+			]
+		},
+		"PriceConsumerV3.sol": {
+			"keccak256": "0xa7c110aa41f1ddd2c5bbc36be1a6a22518bc0ad00ecd4ce3bd31ffb346273332",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://5d6e046339eb475c799d8c95ef52853c7a3cff7f86ef60b75071459ab14f7a58",
+				"dweb:/ipfs/QmSb2etxpfLVxnLz1HNgwGhxZzZpz1mucTLesY3cH3BDXA"
+			]
+		}
+	},
+	"version": 1
+}

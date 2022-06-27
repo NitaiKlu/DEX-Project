@@ -85,6 +85,30 @@
 				"inputs": [
 					{
 						"internalType": "address",
+						"name": "owner",
+						"type": "address"
+					},
+					{
+						"internalType": "address",
+						"name": "spender",
+						"type": "address"
+					}
+				],
+				"name": "allowance",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
 						"name": "",
 						"type": "address"
 					},
@@ -94,7 +118,7 @@
 						"type": "address"
 					}
 				],
-				"name": "allowance",
+				"name": "allowanceAccount",
 				"outputs": [
 					{
 						"internalType": "uint256",
@@ -134,6 +158,25 @@
 					{
 						"internalType": "address",
 						"name": "",
+						"type": "address"
+					}
+				],
+				"name": "balanceAccount",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "account",
 						"type": "address"
 					}
 				],
@@ -201,6 +244,19 @@
 				"type": "function"
 			},
 			{
+				"inputs": [],
+				"name": "totalSupplyToken",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
 				"inputs": [
 					{
 						"internalType": "address",
@@ -257,6 +313,9 @@
 		"devdoc": {
 			"kind": "dev",
 			"methods": {
+				"allowance(address,address)": {
+					"details": "Returns the remaining number of tokens that `spender` will be allowed to spend on behalf of `owner` through {transferFrom}. This is zero by default. This value changes when {approve} or {transferFrom} are called."
+				},
 				"approve(address,uint256)": {
 					"params": {
 						"_spender": "allowed to spend and a max amount allowed to spend",
@@ -265,6 +324,12 @@
 					"returns": {
 						"_0": "true, success once address approved"
 					}
+				},
+				"balanceOf(address)": {
+					"details": "Returns the amount of tokens owned by `account`."
+				},
+				"totalSupply()": {
+					"details": "Returns the amount of tokens in existence."
 				},
 				"transfer(address,uint256)": {
 					"params": {
@@ -287,7 +352,6 @@
 					}
 				}
 			},
-			"title": "ERC20 Contract - a liquidity pool token ",
 			"version": 1
 		},
 		"userdoc": {
@@ -322,12 +386,20 @@
 		"remappings": []
 	},
 	"sources": {
-		"PoolToken.sol": {
-			"keccak256": "0xe2c571d58a3ebb3637deba6b996267688f408db716ebac1c3be19441574811e3",
+		"ERC20_token/IERC20.sol": {
+			"keccak256": "0xcf55d265592e8b07ff8cad8c4d3db2e9ccca3dbc066cec5b9a6ca10de1624960",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://6f6274cbdfdd9089682a454ee70a72a80a695f3dbbb0c220c65bf4dfac6921d0",
-				"dweb:/ipfs/QmRK4tnu6hsXAxtzooVGFzTrc1nXgGJCNGfmSAhce48Q8f"
+				"bzz-raw://a353382a5d1ee61672e2014b52aafa1c9147c3739119195eadfeb83b69d921f6",
+				"dweb:/ipfs/QmZ2Wx6SgCsANjRHHbyj8vEGwemVGDn1H5vRVuiJpUGCHV"
+			]
+		},
+		"PoolToken.sol": {
+			"keccak256": "0x9ddbc4e5b11a4fbee7a7b7be91d59e2707d486f5a440323fdf1f05db3aec4aeb",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://06153c617c35d5e605b5632bbe2c5e15d65382494387c2a8fea584d0ff2591e0",
+				"dweb:/ipfs/QmbZJ9hHWDf9BHtkwqzf9xGfQTPjAzPw1YEzBvoWTr47jE"
 			]
 		}
 	},
