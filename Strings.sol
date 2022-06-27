@@ -72,15 +72,17 @@ library Strings {
     function toHexString(address addr) internal pure returns (string memory) {
         return toHexString(uint256(uint160(addr)), _ADDRESS_LENGTH);
     }
-
+    
     function concatenate(string memory a,string memory b) public pure returns (string memory){
-        return string(abi.encodePacked(a,' ',b));
+        return string(abi.encodePacked(a, b));
     }
+    /*
     function concatenate(string memory a,string memory b, string memory c) public pure returns (string memory){
         return concatenate(concatenate(a,b),c);
     } 
      function concatenate(string memory a,string memory b, string memory c, string memory d) public pure returns (string memory){
         return concatenate(concatenate(a,b,c),d);
     }
+    */
     
 }
