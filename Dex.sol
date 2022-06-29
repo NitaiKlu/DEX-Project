@@ -16,6 +16,7 @@ contract Dex is Ownable {
         liquidityToken = new PoolToken("BurgerSwap", "BS", 18, 100000000000);
     }
     
+    // For scalability purposes if the pool runs out of liquidity tokens
     function requestFromPool(uint amount) public {
         if(poolsExist[msg.sender]) {
             liquidityToken.transfer(msg.sender, amount);

@@ -35,11 +35,8 @@ contract Liquidity_pool is Ownable {
         liquidityToken = _poolToken; 
         amount_A = 0;
         amount_B = 0;
-        // for now i put  
-        // DAI : 0x6B175474E89094C44Da98b954EedeAC495271d0F
-        // DAI/USD : 0xaed0c38402a5d19df6e4c03f4e2dced6e29c1ee9
-        // AAVE : 0x7Fc66500c84A76Ad7e9c93437bFc5Ac33E2DDaE9
-        // AAVE/USD : 0x547a514d5e3769680ce22b2361c10ea13619e8a9
+        
+        // on a real netwotk we will use datafeeds and not fixed rates
         priceFeedTokenA = _dataFeedA;
         priceFeedTokenB = _dataFeedB;
         total_funds_received = 0;
@@ -56,7 +53,7 @@ contract Liquidity_pool is Ownable {
         uint amount_minus_fee = uint((_amount*(0.97*100))/100);
         uint fee = _amount - amount_minus_fee;
         total_revenue+= fee;
-        // send the 3% to all liquidity providers ?
+        
         if(_coin_received == tokenA){  
             // dy = dx*y/(x+dx)
             uint amount_sent_back = (amount_minus_fee * amount_B)/(amount_A+ amount_minus_fee);
@@ -85,6 +82,9 @@ contract Liquidity_pool is Ownable {
     }
     
     function donate(uint _amount_coin_A, uint _amount_coin_B) payable public {
+        
+        // for real network we will use these oracles
+
         uint exchange_value_A;
         exchange_value_A = 2; //uint256(PriceConsumerV3(priceFeedTokenA).getLatestPrice());
         uint exchange_value_B;
@@ -93,8 +93,8 @@ contract Liquidity_pool is Ownable {
         uint amount_coin_A_dollars = _amount_coin_A* exchange_value_A;
         uint amount_coin_B_dollars = _amount_coin_B* exchange_value_B;
         require(amount_coin_A_dollars == amount_coin_B_dollars, "The value provided is not the same for each token");
-        require(IERC20(tokenA).allowance(msg.sender,address(this)) >= _amount_coin_A, "Not enough {tokenA} have been allowed");
-        require(IERC20(tokenB).allowance(msg.sender,address(this)) >= _amount_coin_B, "Not enough {tokenB} have been allowed");
+        require(IERC20(tokenA).allowance(msg.sender,address(this)) >= _amount_coin_A, "Not enough tokenA have been allowed");
+        require(IERC20(tokenB).allowance(msg.sender,address(this)) >= _amount_coin_B, "Not enough tokenB have been allowed");
         // get the funds from the user 
         IERC20(tokenA).transferFrom(msg.sender, address(this), _amount_coin_A);
         IERC20(tokenB).transferFrom(msg.sender, address(this), _amount_coin_B);
